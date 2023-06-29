@@ -23,7 +23,7 @@ app.post('/portfolio_message',async(req,res)=>{
     const transport = nodemailer.createTransport({
         host:"smtp.gmail.com",
         port:587,
-        secure:true,
+        secure:false,
         auth:{
             user:process.env.EMAIL,
             pass:process.env.EMAILAUTH
@@ -52,6 +52,10 @@ app.post('/portfolio_message',async(req,res)=>{
    } catch (error) {
       res.status(400).json({error:error.message})
    }
+})
+
+app.get("/",(req,res)=>{
+    res.send("<h1>Hey welcome to the portfolio server side !!...");
 })
 
 app.listen(process.env.PORT,()=>{
