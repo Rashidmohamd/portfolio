@@ -5,6 +5,7 @@ const Contact = () => {
   const [msg,setMsg]=useState("")
   const [stat,setStat]=useState("")
   const [err,setErr]=useState("");
+  const [pending,setPend]=useState(false)
   
   
   const handleSubmit= async(e)=>{
@@ -21,7 +22,8 @@ const Contact = () => {
       setErr("sorry you can not leave a empty or less than 10 character message !")
       return;
     }
-    const res= await fetch(process.env.REACT_APP_PORT,{
+    setPend(true)
+    const res= await fetch("https://portfolio-661y.onrender.com/portfolio_message",{
       method:"POST",
       headers:{"content-type":"application/json"},
       body:JSON.stringify({
@@ -33,13 +35,16 @@ const Contact = () => {
 
     if(res.status ===200){
       setStat(json.msg)
-      console.log(json);
+      setErr("")
+      setMsg("");
+      setEmail('');
+      setName("");
+      setPend(false)
     }else{
       setErr(json.error)
+      setStat("")
+      setPend(false)
     }
-
-    console.log(name,email,msg)
-
 
   }
     return ( 
