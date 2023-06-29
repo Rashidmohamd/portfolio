@@ -1,0 +1,42 @@
+.project{
+    width:88.5%;
+    padding: 10px 20px;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: solid $gray 2px;
+    border-bottom: solid $gray 2px;
+    margin: 20px auto;
+
+    .group{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .head{
+            font-size:$primeryFontSize;
+            font-family: $primeryFont;
+        }
+        .body{
+            font-size: $navFontSize;
+            font-family: $primeryFont;
+            color:$gray;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .project{
+        width:95vw;
+        margin:inherit auto;
+        display:block;
+
+       display:grid;
+       grid-template-columns: 1fr 1fr;
+       grid-row: 1fr 1fr;
+    }
+    
+}

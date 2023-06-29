@@ -1,0 +1,85 @@
+.about{
+    width:100%;
+    background:#020C18;
+    display: flex;
+    padding-left:75px;
+    margin-top:30px;
+    padding-top:20px;
+
+    .text{
+        padding-top:30px;
+       .line{
+        width:200px;
+        height:20px;
+        background: $secodery;
+       }
+       .head{
+        font-size:4rem;
+        color:$primery;
+        font-family:$primeryFont;
+       }
+       .prag{
+        font-size: 1.8rem;
+        font-family: "Poppins";
+        color:white;
+       }
+       .foot{
+        font-size: 4.5rem;
+        font-family: "Poopins";
+        color:$secodery;
+       }
+    }
+
+}
+
+.skills{
+    width:70%;
+    margin: 30px auto;
+
+    ul{
+        list-style: none;
+        li{
+            margin :5px auto;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr ;
+            
+
+            h1{
+                font-size: 26px;
+                font-family:"Poppins";
+                font-weight:200;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .about{
+        flex-direction: column;
+        width:100vw;
+        padding:0 10px;
+        margin:0 auto;
+        position:relative;
+
+        .foot{
+            position:absolute;
+            bottom:20px;
+            left:20px;
+        }
+    }
+
+    .skills{
+        width:95vw;
+        margin:10px auto;
+        padding:0 10px;
+
+        ul{
+            li{
+                grid-template-columns: 1fr 1fr;
+                
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500;1,800&display=swap");
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+.home {
+  width: 88.5%;
+  height: 500px;
+  position: relative;
+  background-color: #F0F0F5;
+  margin: 10px auto;
+  border-radius: 7px;
+  padding: 0 20px;
+  perspective: 700;
+}
+.home svg {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.home img {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  right: 160px;
+  top: 115px;
+  height: 160px;
+  transform: rotate(8.5deg);
+  perspective: 600;
+  transform-style: preserve-3d;
+}
+.home .text {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.home .text .head {
+  font-size: 5rem;
+  font-family: "Poppins";
+  color: #000000;
+}
+.home .text .head span {
+  color: #7203A6;
+}
+.home .text h3 {
+  font-size: 2.7rem;
+  color: #BFB8B8;
+  font-family: #FFFFFF;
+}
+.home .text .btns {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.home .text .btns button {
+  border-radius: 5px;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  font-family: "Poopins";
+  padding: 7px;
+  border: none;
+  cursor: pointer;
+}
+.home .text .btns .projectBtn {
+  background: #7203A6;
+}
+
+@media screen and (max-width: 1130px) {
+  .home {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+  }
+  .home .svgG {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -20%;
+  }
+  .home .svgG svg {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
+  .home .svgG img {
+    right: 23%;
+    top: 20.5%;
+    border-top-left-radius: 42%;
+    width: 35%;
+    height: auto;
+  }
+}
+.about {
+  width: 100%;
+  background: #020C18;
+  display: flex;
+  padding-left: 75px;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+.about .text {
+  padding-top: 30px;
+}
+.about .text .line {
+  width: 200px;
+  height: 20px;
+  background: #7203A6;
+}
+.about .text .head {
+  font-size: 4rem;
+  color: #FFFFFF;
+  font-family: "Poppins";
+}
+.about .text .prag {
+  font-size: 1.8rem;
+  font-family: "Poppins";
+  color: white;
+}
+.about .text .foot {
+  font-size: 4.5rem;
+  font-family: "Poopins";
+  color: #7203A6;
+}
+
+.skills {
+  width: 70%;
+  margin: 30px auto;
+}
+.skills ul {
+  list-style: none;
+}
+.skills ul li {
+  margin: 5px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.skills ul li h1 {
+  font-size: 26px;
+  font-family: "Poppins";
+  font-weight: 200;
+}
+
+@media screen and (max-width: 700px) {
+  .about {
+    flex-direction: column;
+    width: 100vw;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .about .foot {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  .skills {
+    width: 95vw;
+    margin: 10px auto;
+    padding: 0 10px;
+  }
+  .skills ul li {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.project {
+  width: 88.5%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid #BFB8B8 2px;
+  border-bottom: solid #BFB8B8 2px;
+  margin: 20px auto;
+}
+.project .group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project .group .head {
+  font-size: 5rem;
+  font-family: "Poppins";
+}
+.project .group .body {
+  font-size: 2.6rem;
+  font-family: "Poppins";
+  color: #BFB8B8;
+}
+
+@media screen and (max-width: 700px) {
+  .project {
+    width: 95vw;
+    margin: inherit auto;
+    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
+  }
+}
+.contact {
+  width: 100%;
+  background: #7203A6;
+  padding: 50px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.contact .form {
+  display: flex;
+  flex-direction: column;
+}
+.contact .form h3 {
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 10px;
+  border: 1px solid #BFB8B8;
+  margin: 10px auto;
+  font-family: "Poopins";
+}
+.contact .form .err {
+  border-color: red;
+  color: red;
+}
+.contact .form .succ {
+  color: #0076ff;
+  border-color: #0076ff;
+}
+.contact .form .note {
+  color: rgb(56, 228, 4);
+  border-color: rgb(56, 228, 4);
+}
+.contact .form .note big {
+  color: #0076ff;
+}
+.contact .form .note span {
+  color: rgb(177, 207, 7);
+}
+.contact .form label {
+  font-size: 20px;
+  font-weight: 300;
+  font-family: arial;
+  color: #BFB8B8;
+}
+.contact .form input {
+  font-size: 17px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #BFB8B8;
+}
+.contact .form button {
+  font-size: 20px;
+  font-family: arial;
+  padding: 5px 3px;
+  border: none;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  border-radius: 7px;
+  background-color: #BFB8B8;
+  cursor: pointer;
+  font-family: arial;
+}
+.contact .form textarea {
+  border-radius: 7px;
+  font-size: 17px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #BFB8B8;
+  padding: 5px;
+}
+.contact .Text .head {
+  font-size: 3.5rem;
+  font-family: "Poppins";
+  color: #0076ff;
+}
+.contact .Text .prag {
+  font-size: 20px;
+  font-family: "Poppins";
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .contact {
+    flex-direction: column;
+    padding: 50px 15px;
+  }
+  .contact .Text #img {
+    width: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+body .app {
+  width: 1280px;
+  background: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  padding-bottom: 8vh;
+}
+body .app .navbar {
+  width: 84%;
+  margin: 10px auto;
+  margin-left: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  padding: 10px;
+  transform: translate(-50%);
+  z-index: 1000;
+  background: #FFFFFF;
+  border: solid 2px #F0F0F5;
+  border-radius: 10px;
+}
+body .app .navbar::after {
+  content: "";
+  width: 2px;
+  height: 30px;
+  background: #F0F0F5;
+  position: absolute;
+  top: -25px;
+  right: 30px;
+  transform-origin: top;
+  transform: rotate(35deg);
+}
+body .app .navbar::before {
+  content: "";
+  width: 2px;
+  height: 30px;
+  background: #F0F0F5;
+  position: absolute;
+  top: -25px;
+  left: 30px;
+  transform-origin: top;
+  transform: rotate(-35deg);
+}
+body .app .navbar .logo {
+  font-size: 2.7rem;
+  font-family: "Poppins";
+  color: #7203A6;
+}
+body .app .navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.6rem;
+  color: #000000;
+  font-family: "Poppins";
+  font-weight: 300;
+  width: 500px;
+}
+body .app .navbar ul a {
+  text-decoration: none;
+  color: #000000;
+}
+body .app .navbar ul .active {
+  color: #7203A6;
+}
+body .app .footer {
+  width: 100%;
+  height: 8vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #7203A6;
+  font-size: 2.6rem;
+  font-family: "Poppins";
+}
+body .app .footer .copy {
+  padding: 5px 0;
+}
+body .app .footer .sociales {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  border: solid 2px #F0F0F5;
+  padding: 7px 0;
+  border-radius: 10px;
+}
+body .app .footer .sociales::after {
+  content: "";
+  width: 16%;
+  height: 4px;
+  background: #F0F0F5;
+  position: absolute;
+  right: -16%;
+}
+body .app .footer .sociales::before {
+  content: "";
+  width: 16%;
+  height: 4px;
+  background: #F0F0F5;
+  position: absolute;
+  left: -16%;
+}
+body .app .footer .sociales a {
+  color: #BFB8B8;
+  text-decoration: none;
+}
+body .app .hide {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  body .app {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1130px) {
+  html {
+    font-size: 8px;
+  }
+  body .app .navbar {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  body .app {
+    width: 100vw;
+  }
+  body .app .navbar {
+    width: 100%;
+    top: 0;
+    left: 0%;
+    padding: 10px;
+    background: #F0F0F5;
+    transform: translate(0%);
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    position: fixed;
+  }
+  body .app .navbar .menu {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  body .app .navbar .close {
+    transition: 0.4s linear;
+    position: absolute;
+    right: -95%;
+    top: -330%;
+    background-color: #F0F0F5;
+    width: 45rem;
+    height: 45rem;
+    border-radius: 50%;
+    border-top-left-radius: 40%;
+    padding: 10px;
+  }
+  body .app .navbar .ul {
+    transition: 0.4s linear;
+    position: absolute;
+    right: -20rem;
+    top: -10rem;
+    background-color: #F0F0F5;
+    width: 45rem;
+    height: 45rem;
+    border-radius: 50%;
+    border-top-left-radius: 40%;
+    padding: 10px;
+  }
+  body .app .navbar .ul a {
+    position: absolute;
+  }
+  body .app .navbar .ul .homeLink {
+    top: 16rem;
+  }
+  body .app .navbar .ul .aboutLink {
+    top: 25rem;
+    left: 2rem;
+  }
+  body .app .navbar .ul .contactLink {
+    top: 30rem;
+    left: 3.7rem;
+  }
+  body .app .navbar .ul svg {
+    position: absolute;
+    top: 12rem;
+    right: 21.5rem;
+    cursor: pointer;
+  }
+  body .app .hide {
+    display: block;
+  }
+}/*# sourceMappingURL=index.css.map */
