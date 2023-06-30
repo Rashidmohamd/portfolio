@@ -43,11 +43,11 @@ app.post('/portfolio_message',async(req,res)=>{
         from:`'Rashid' <${process.env.EMAIL}>`,
         to:email,
         subject:"Recieved your message !",
-        html:`<h2>Hello Mr ${name} ! <br>your message has been deleivered i will be there to reply as soon as possible !!</h2>`
+        html:`<h2>Hello Mr ${name} ! <br>your message has been delivered i will be asnwering you  as soon as possible thank you !!</h2>`
       })
     }
 
-    res.json({msg:"your has been deleivered i will answer you to message as soon as posible !!!"}).status(201)
+    res.json({msg:"your message has been delivered i will answer you as soon as posible thank you !!!"}).status(201)
 
    } catch (error) {
       res.status(400).json({error:error.message})
