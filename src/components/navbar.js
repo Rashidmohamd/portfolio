@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink ,Link} from "react-router-dom";
 
 const Navbar = () => {
     const handleMenu = (e)=>{
@@ -17,7 +17,7 @@ const Navbar = () => {
 
     return (
      <div className="navbar">
-        <h1 className="logo">Rashid</h1>
+        <Link to="/" className="logo">Rashid</Link>
         <ul onClick={handleclose} className="close" id="ul">
             <NavLink  to='/' className='homeLink'>Home</NavLink>
             <NavLink to='/project'>Project</NavLink>

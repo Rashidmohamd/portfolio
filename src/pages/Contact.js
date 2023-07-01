@@ -66,8 +66,8 @@ const Contact = () => {
             <form  className="form">
               <h3 className="note">
                 <big>Note!</big> <br />
-                please use a vild email address so that i will be able to reach you!
-              <br />you will get an email black when your message has delivered !
+                please use a valid email address so that i will be able to reach you!
+              <br />you will get an email back when your message has delivered !
               <br /><span>if you do not get an email back after submiting please check your email and try to leave your message again thank you! <br /> <big>Thank you !!</big> </span></h3>
               {err && <h3 className="err">{err}</h3>}
               {stat && <h3 className="succ">{stat}</h3>}

@@ -237,14 +237,14 @@ html {
   border-color: #0076ff;
 }
 .contact .form .note {
-  color: rgb(56, 221, 6);
-  border-color: rgb(50, 192, 6);
+  color: #deebe7;
+  border-color: #deebe7;
 }
 .contact .form .note big {
-  color: #0076ff;
+  color: #deebe7;
 }
 .contact .form .note span {
-  color: rgb(177, 207, 7);
+  color: rgb(243, 219, 5);
 }
 .contact .form label {
   font-size: 20px;
@@ -283,7 +283,7 @@ html {
 .contact .Text .head {
   font-size: 3.5rem;
   font-family: "Poppins";
-  color: #0076ff;
+  color: #deebe7;
 }
 .contact .Text .prag {
   font-size: 20px;
@@ -365,6 +365,7 @@ body .app .navbar .logo {
   font-size: 2.7rem;
   font-family: "Poppins";
   color: #7203A6;
+  text-decoration: none;
 }
 body .app .navbar ul {
   display: flex;
@@ -470,7 +471,7 @@ body .app .hide {
   body .app .navbar .close {
     transition: 0.4s linear;
     position: absolute;
-    right: -95%;
+    right: -110%;
     top: -330%;
     background-color: #F0F0F5;
     width: 45rem;
