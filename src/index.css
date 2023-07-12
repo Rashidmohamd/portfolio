@@ -208,6 +208,95 @@ html {
     grid-row: 1fr 1fr;
   }
 }
+.noteScreen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 0;
+  z-index: 10000;
+  display: none;
+}
+.noteScreen .exit {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  font-size: 2rem;
+  color: red;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1333333333);
+  font-family: "Poppins";
+  cursor: pointer;
+  margin-top: 5rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.5333333333);
+}
+.noteScreen .hideNote {
+  transition: all 0.3s linear;
+  width: 0;
+  height: 0;
+  display: hidden;
+}
+.noteScreen .hideNote .prag {
+  opacity: 0;
+  transition: all 0.1s;
+}
+.noteScreen .hideNote .mark {
+  opacity: 0;
+  transition: all 0.1s linear;
+}
+.noteScreen .noteBlog {
+  transition: all 0.3s linear;
+  width: 350px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #169F0A;
+  animation: noteblog 0.7s linear infinite forwards;
+}
+@keyframes noteblog {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.noteScreen .noteBlog .mark {
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+.noteScreen .noteBlog .prag {
+  transition: all 0.5s linear;
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+.noteScreen .noteBlog .prag big {
+  font-size: 2.5rem;
+  width: 100%;
+}
+.noteScreen .noteBlog .prag p {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+}
+.noteScreen .noteBlog .prag .bigOk {
+  width: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
 .contact {
   width: 100%;
   background: #7203A6;
@@ -299,6 +388,9 @@ html {
   .contact .Text #img {
     width: 100%;
   }
+  .noteScreen .noteBlog {
+    width: 80%;
+  }
 }
 * {
   margin: 0;
@@ -324,16 +416,15 @@ body .app {
 }
 body .app .navbar {
   width: 84%;
-  margin: 10px auto;
+  margin: 10px 16%;
   margin-left: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 10px;
-  left: 50%;
+  left: 7%;
   padding: 10px;
-  transform: translate(-50%);
   z-index: 1000;
   background: #FFFFFF;
   border: solid 2px #F0F0F5;

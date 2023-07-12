@@ -31,7 +31,7 @@ body{
         padding-bottom:8vh;
         .navbar{
             width:84%;
-            margin: 10px auto;
+            margin: 10px 16%;
             margin-left: 8px;
 
             display:flex;
@@ -39,9 +39,9 @@ body{
             align-items: center;
             position: fixed;
             top:10px;
-            left: 50%;
+            left: 7%;
             padding:10px;
-            transform: translate(-50% );
+            
             z-index: 1000;
             background: $primery;
             border: solid 2px $light;

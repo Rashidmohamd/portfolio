@@ -1,9 +1,10 @@
-import {useState}from "react"
+import {useEffect, useState}from "react"
 const Contact = () => {
+  const noteScreen = document.querySelector(".noteScreen");
+  const noteBlog= document.getElementById("noteBlog");
   const [name,setName]=useState('');
   const [email,setEmail]=useState("");
   const [msg,setMsg]=useState("")
-  const [stat,setStat]=useState("")
   const [err,setErr]=useState("");
   
   
@@ -12,19 +13,17 @@ const Contact = () => {
     e.target.disabled=true;
     if(!email.includes("."||"@"||"com")){
         setErr("sorry you must use a valid email address");
-        setStat("")
         e.target.disabled=false;
         return;
     }
     if(name.length<=2){
       setErr("please use a valid name thank you !")
-      setStat("")
       e.target.disabled=false;
       return;
     }
     if(msg.length<=10){
       setErr("sorry you can not leave a empty or less than 10 character message !")
-      setStat("")
+     
       e.target.disabled=false;
       return;
     }
@@ -39,8 +38,15 @@ const Contact = () => {
     const json = await res.json();
 
     if(res.status ===200){
-      setStat(json.msg)
-      console.log(json)
+      noteBlog.classList.add("noteBlog");
+      noteBlog.classList.remove("hideNote")
+      noteScreen.style.display="flex"
+      setTimeout(() => {
+        noteBlog.classList.add("hideNote");
+        noteBlog.classList.remove("noteBlog")
+        noteScreen.style.display="none"
+      }, 3000);
+
       setErr("")
       setMsg("");
       setEmail('');
@@ -49,11 +55,21 @@ const Contact = () => {
     
     }else{
       setErr(json.error)
-      setStat("");
       e.target.disabled=false;
      
     }
 
+  }
+
+  useEffect(()=>{
+    
+  },[])
+
+  const hideThankScreen=(e)=>{
+     e.preventDefault();
+     noteBlog.classList.add("hideNote");
+     noteBlog.classList.remove("noteBlog")
+     noteScreen.style.display="none"
   }
     return ( 
         <>
@@ -70,7 +86,6 @@ const Contact = () => {
               <br />you will get an email back when your message has delivered !
               <br /><span>if you do not get an email back after submiting please check your email and try to leave your message again thank you! <br /> <big>Thank you !!</big> </span></h3>
               {err && <h3 className="err">{err}</h3>}
-              {stat && <h3 className="succ">{stat}</h3>}
               <label htmlFor="name">Name :</label>
               <input onChange={e=>setName(e.target.value.toUpperCase())} value={name}  placeholder="Enter Your Name!" type="text" required/>
               <label htmlFor="email">Emial :</label>
@@ -79,6 +94,24 @@ const Contact = () => {
               <textarea required value={msg} placeholder="Please type your message here Notice you can not just Submit an empty or less than 10 character Message!" onChange={e=>setMsg(e.target.value)} name="message" id="message" cols="30" rows="10"></textarea>
               <button onClick={handleSubmit}>Submit</button>
             </form>
+            <div className="noteScreen">
+              <div id="noteBlog" className="hideNote">
+                <div className="mark">
+                  <svg width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M23.7751 46.0769L1.02508 25.5931C-0.341695 24.3625 -0.341695 22.3672 1.02508 21.1364L5.97472 16.6797C7.3415 15.449 9.55771 15.449 10.9245 16.6797L26.25 30.4785L59.0755 0.922971C60.4423 -0.307657 62.6585 -0.307657 64.0253 0.922971L68.9749 5.37967C70.3417 6.6103 70.3417 8.60562 68.9749 9.83637L28.7249 46.077C27.358 47.3077 25.1419 47.3077 23.7751 46.0769Z" fill="black"/>
+                  </svg>
+                </div>
+                <div className="prag">
+                  <big>Message successfully sent!</big>
+                  <p>I have receive your message an will reply you as soon as possible. Thank you!</p>
+
+                  <big onClick={hideThankScreen} className="bigOk">Ok</big>
+                </div>
+
+              </div>
+
+              <div onClick={hideThankScreen} className="exit">X</div>
+            </div>
           </div>
         </>
      );

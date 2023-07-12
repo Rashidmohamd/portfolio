@@ -1,3 +1,95 @@
+.noteScreen{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    background: #0009;
+    top:0;
+    right:0;
+    z-index:10000;
+    display: none;
+
+    .exit{
+        width:3.5rem;
+         height:3.5rem;
+         border-radius: 50%;
+         display:flex;
+         font-size:2rem;
+         color:red;
+         align-items: center;
+         justify-content: center;
+         background-color: #fff2;
+         font-family: "Poppins";
+         cursor: pointer;
+         margin-top:5rem;
+         border:1.5px solid #fff8;
+
+    }
+    .hideNote{
+        transition: all .3s linear;
+        width:0;
+        height:0;
+        display: hidden;
+        .prag{
+            opacity: 0;
+            transition: all .1s;
+        }
+        .mark{
+            opacity: 0;
+            transition: all .1s linear;
+        }
+    }
+    .noteBlog{
+        transition: all .3s linear;
+        width:350px;
+        padding:2rem;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #169F0A;
+        animation: noteblog .7s linear
+          infinite forwards;
+
+         @keyframes noteblog {
+            0%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.1);
+            }
+            100%{
+                transform: scale(1);
+            }
+         }
+        .mark{
+            opacity: 1;
+            transition: all .5s linear;
+        }
+       .prag{
+        transition: all .5s linear;
+        display: inherit;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        big{
+            font-size: 2.5rem;
+            width:100%;
+        }
+        p{
+            font-size: 1.7rem;
+            line-height: 2.5rem;
+        }
+        .bigOk{
+            width:50px;
+            margin:10px;
+            cursor: pointer;
+        }
+       }
+    }
+}
 .contact{
     width: 100%;
     background: $secodery;
@@ -99,5 +191,10 @@
         }
        }
     }
-    
+    .noteScreen{
+
+        .noteBlog{
+            width:80%;
+        }
+    }
 }
