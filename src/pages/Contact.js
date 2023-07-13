@@ -6,27 +6,36 @@ const Contact = () => {
   const [email,setEmail]=useState("");
   const [msg,setMsg]=useState("")
   const [err,setErr]=useState("");
+  const [pending,setPending]=useState(false)
   
   
   const handleSubmit= async(e)=>{
     e.preventDefault();
     e.target.disabled=true;
+    setPending(true)
+    noteScreen.style.display="flex"
     if(!email.includes("."||"@"||"com")){
         setErr("sorry you must use a valid email address");
         e.target.disabled=false;
+        setPending(false)
+        noteScreen.style.display="none"
         return;
     }
     if(name.length<=2){
       setErr("please use a valid name thank you !")
       e.target.disabled=false;
+      setPending(true)
+      noteScreen.style.display="none"
       return;
     }
     if(msg.length<=10){
       setErr("sorry you can not leave a empty or less than 10 character message !")
-     
+     setPending(false)
       e.target.disabled=false;
+      noteScreen.style.display="none"
       return;
     }
+
     const res= await fetch(process.env.REACT_APP_Uri,{
       method:"POST",
       headers:{"content-type":"application/json"},
@@ -45,25 +54,26 @@ const Contact = () => {
         noteBlog.classList.add("hideNote");
         noteBlog.classList.remove("noteBlog")
         noteScreen.style.display="none"
-      }, 3000);
+      }, 7000);
 
       setErr("")
       setMsg("");
       setEmail('');
       setName("");
+      setPending(false)
       e.target.disabled=false;
     
     }else{
+      setMsg("");
+      setEmail('');
+      setName("");
+      setPending(false)
       setErr(json.error)
       e.target.disabled=false;
      
     }
 
   }
-
-  useEffect(()=>{
-    
-  },[])
 
   const hideThankScreen=(e)=>{
      e.preventDefault();
@@ -95,6 +105,13 @@ const Contact = () => {
               <button onClick={handleSubmit}>Submit</button>
             </form>
             <div className="noteScreen">
+              {pending && <div className="pending">
+                    <div className="loader">
+                    </div>
+                    <div className="msg">Sending...</div>
+                    <div className="waiting">Sending please wait !... <br /><span>sorry i am use free hosting that is why it is delaying to deliver your message !</span></div>
+                </div>
+                }
               <div id="noteBlog" className="hideNote">
                 <div className="mark">
                   <svg width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +127,7 @@ const Contact = () => {
 
               </div>
 
-              <div onClick={hideThankScreen} className="exit">X</div>
+              {!pending &&<div onClick={hideThankScreen} className="exit">X</div>}
             </div>
           </div>
         </>

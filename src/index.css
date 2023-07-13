@@ -222,6 +222,59 @@ html {
   z-index: 10000;
   display: none;
 }
+.noteScreen .pending {
+  width: 350px;
+  height: 300px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4666666667);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.noteScreen .pending div {
+  position: absolute;
+}
+.noteScreen .pending .loader {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 2px dashed lime;
+  animation: loader 0.7s linear infinite forwards;
+}
+.noteScreen .pending .waiting {
+  position: absolute;
+  bottom: 10px;
+  color: whitesmoke;
+  font-size: 2rem;
+  font-family: "Poppins";
+  padding: 1rem;
+}
+.noteScreen .pending .waiting span {
+  font-size: 1.6rem;
+  font-family: "Poppins";
+  font-style: italic;
+  color: rgb(195, 216, 213);
+}
+@keyframes loader {
+  0% {
+    transform: rotate(10deg);
+    background-color: rgb(150, 39, 39);
+  }
+  50% {
+    transform: rotate(260deg);
+    background: rgb(51, 153, 127);
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: rgb(98, 47, 163);
+  }
+}
+.noteScreen .pending .msg {
+  color: #0076ff;
+  font-size: 2rem;
+  font-family: arial;
+}
 .noteScreen .exit {
   width: 3.5rem;
   height: 3.5rem;
@@ -259,17 +312,17 @@ html {
   flex-direction: column;
   align-items: center;
   background-color: #169F0A;
-  animation: noteblog 0.7s linear infinite forwards;
+  animation: noteblog 7s linear infinite forwards;
 }
 @keyframes noteblog {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.7);
   }
 }
 .noteScreen .noteBlog .mark {
@@ -389,6 +442,9 @@ html {
     width: 100%;
   }
   .noteScreen .noteBlog {
+    width: 80%;
+  }
+  .noteScreen .pending {
     width: 80%;
   }
 }
