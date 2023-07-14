@@ -231,6 +231,15 @@ html {
   align-items: center;
   justify-content: center;
   position: relative;
+  animation: pending 2s linear infinite alternate;
+}
+@keyframes pending {
+  from {
+    background: rgba(0, 0, 0, 0.4666666667);
+  }
+  to {
+    background: rgba(255, 255, 255, 0.4666666667);
+  }
 }
 .noteScreen .pending div {
   position: absolute;

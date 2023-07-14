@@ -22,6 +22,16 @@
         align-items: center;
         justify-content: center;
         position:relative;
+        animation:pending 2s linear infinite alternate;
+
+        @keyframes pending {
+            from{
+                background:#0007;
+            }
+            to{
+                background:#fff7;
+            }
+        }
         div{
             position: absolute;  
         }

@@ -1,4 +1,4 @@
-import {useEffect, useState}from "react"
+import {useState}from "react";
 const Contact = () => {
   const noteScreen = document.querySelector(".noteScreen");
   const noteBlog= document.getElementById("noteBlog");
@@ -8,7 +8,7 @@ const Contact = () => {
   const [err,setErr]=useState("");
   const [pending,setPending]=useState(false)
   
-  
+
   const handleSubmit= async(e)=>{
     e.preventDefault();
     e.target.disabled=true;
@@ -109,7 +109,7 @@ const Contact = () => {
                     <div className="loader">
                     </div>
                     <div className="msg">Sending...</div>
-                    <div className="waiting">Sending please wait !... <br /><span>sorry i am use free hosting that is why it is delaying to deliver your message !</span></div>
+                    <div className="waiting">Sending please wait !... <br /><span>sorry i am using free hosting that is why it is delaying to deliver your message !</span></div>
                 </div>
                 }
               <div id="noteBlog" className="hideNote">
